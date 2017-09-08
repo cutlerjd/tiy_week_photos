@@ -9,3 +9,18 @@ export function fetchAlbums() {
       })
     })
   }
+
+export function closeNav(){
+  console.log("Close nave called")
+  store.dispatch({
+    type:'NAV',
+    open:false
+  })
+}
+export function openNav(){
+  console.log("Open nav called")
+  store.dispatch({
+    type:'NAV',
+    open:true
+  })
+}

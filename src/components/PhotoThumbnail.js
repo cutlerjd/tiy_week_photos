@@ -1,12 +1,25 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+import { Card, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 
 class PhotoThumbnail extends Component {
+    static defaultProps = {
+        photo:{
+            urls:{
+                thumb:''
+            }
+        },
+        id:''
+    }
     render() {
         return (
-            <div className="card">
-                <img src="http://via.placeholder.com/350x250" />
-                <h4>Photo title {this.props.id}</h4>
-            </div>
+            <Link to={"/album/" + this.props.albumId + "/" + this.props.id}>
+            <Card className="card">
+            <CardMedia>
+            <img src={this.props.thumb} />
+            </CardMedia>
+            </Card>
+            </Link>
         )
     }
 }

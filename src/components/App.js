@@ -3,6 +3,7 @@ import '../styles/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from '../store'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import AlbumsView from './AlbumsView'
 import AlbumView from './AlbumView'
@@ -17,6 +18,7 @@ class App extends Component {
   }
   render() {
     return (
+      <MuiThemeProvider>
       <Provider store={store}>
         <Router>
           <Switch>
@@ -30,6 +32,7 @@ class App extends Component {
           
         </Router>
       </Provider>
+      </MuiThemeProvider>
     );
   }
 }

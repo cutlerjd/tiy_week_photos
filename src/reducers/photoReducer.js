@@ -1,12 +1,15 @@
-let initialState = {
-    albums: []
+const initialState = {
+    albums: [],
+    open: false
 }
 
-export default function (state = initialState, payload) {
-    switch(payload.type){
+export default function (state = initialState, action) {
+    switch(action.type){
         case 'FETCH_ALBUMS':
-        return {...state,albums:payload.albums}
+            return {...state,albums:action.albums}
+        case 'NAV':
+            return {...state,open:action.open}
         default:
-         return state
+            return state
     }
 }

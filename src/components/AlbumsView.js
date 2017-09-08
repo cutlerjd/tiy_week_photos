@@ -7,7 +7,7 @@ class AlbumsView extends Component {
         return (
             <div className="wrapper">
             <div className="navbar">
-                <p>TITLE</p>
+                <p>Photo App</p>
             </div>
             <div className="container">
             {this.props.albums.map(album=>{
